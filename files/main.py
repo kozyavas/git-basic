@@ -6,11 +6,9 @@ import os
 import shutil
 
 
-
 def clean_cache():
-   
     if not os.path.exists(".\cache"):
-       os.mkdir(".\cache")
+    os.mkdir(".\cache")
     else:
         shutil.rmtree(".\cache")
         os.mkdir(".\cache")
@@ -20,7 +18,6 @@ def cache_zip(zip_file, cache_dir):
 
 def cached_files():
     file_paths = []
-
     for folder, subs, files in os.walk(os.path.join(os.getcwd(), 'cache')):
         for filename in files:
             file_paths.append(os.path.abspath(os.path.join(folder, filename)))
